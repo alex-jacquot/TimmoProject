@@ -13,18 +13,18 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 import agence.Agence;
-import clients.Client;
 
 public class BienManager {
 
-	// Singleton pattern
+	/** Constructor (Singleton pattern) **/
+
 	private static BienManager INSTANCE;
 
 	private BienManager() {
 
 	}
 
-	private static BienManager getInstance() {
+	public static BienManager getInstance() {
 		if (INSTANCE == null) {
 			INSTANCE = new BienManager();
 		}
@@ -34,14 +34,23 @@ public class BienManager {
 	/** Attributes **/
 
 	private ArrayList<Bien> biens;
+	static int idBienIncrement = 1;
 
 	/** Methods **/
+
+	public void createBien(int idBien, String adresse, String orientation) {
+		BienFactory.createBien(idBien, adresse, orientation);
+	}
+
+	public void addBien(Bien b) {
+		this.biens.add(b);
+	}
 
 	public ArrayList<Bien> getBiens() {
 		return biens;
 	}
 
-	private Bien getBienById(int idBien) {
+	public Bien getBienById(int idBien) {
 		for (Bien b : biens) {
 			if (b.getIdBien() == idBien) {
 				return b;

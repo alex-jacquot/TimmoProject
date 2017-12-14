@@ -18,28 +18,43 @@ import clients.Client;
 
 public class Agence {
 
-	private static String NAME = "TIMMO-BILIER";
+	/** Constructor Singleton pattern **/
 
-	private Set<Client> clients;
-	private Set<Bien> biens;
-
-	// Singleton pattern
 	private static Agence INSTANCE;
 
 	private Agence() {
-
+		mandats = new HashSet<>();
+		voeux = new HashSet<>();
 	}
 
-	private static Agence getInstance() {
+	public static Agence getInstance() {
 		if (INSTANCE == null) {
 			INSTANCE = new Agence();
 		}
 		return INSTANCE;
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	/** Attributes **/
 
+	private static String NAME = "TIMMO-BILIER";// why not
+
+	private Set<Mandat> mandats;
+	private Set<Voeu> voeux;
+
+	
+
+	public void addMandat(Mandat m) {
+		this.mandats.add(m);
+	}
+
+	public void addVoeu(Voeu v) {
+		this.voeux.add(v);
+	}
+	
+	public static void main(String[] args) {
+
+		Agence timmo = Agence.getInstance();
+		Mandat m1 = new Mandat(0, 0, 0, null);
 	}
 
 }

@@ -4,7 +4,10 @@ public class Client {
 
 	// int idClient;//Pour ne pas réinscrire les clients déjà isncrits (alt.
 	// hashCode())
+
+	int idClient;
 	String nom;
+	String prenom;
 
 	public Client(String nom, String prenom) {
 		super();
@@ -12,7 +15,13 @@ public class Client {
 		this.prenom = prenom;
 	}
 
-	String prenom;
+	public int getIdClient() {
+		return idClient;
+	}
+
+	public void setIdClient(int idClient) {
+		this.idClient = idClient;
+	}
 
 	public String getNom() {
 		return nom;
