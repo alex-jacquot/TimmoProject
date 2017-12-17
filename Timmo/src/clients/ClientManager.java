@@ -16,8 +16,10 @@ import agence.Agence;
 
 public class ClientManager {
 
-	// Singleton pattern
+	/** Constructor and Singleton pattern **/
+
 	private static ClientManager INSTANCE;
+	static int idClientIncrement = 1;
 
 	private ClientManager() {
 
@@ -47,6 +49,10 @@ public class ClientManager {
 			}
 		}
 		return null;
+	}
+
+	public void addClient(Client c) {
+		this.clients.add(c);
 	}
 
 }

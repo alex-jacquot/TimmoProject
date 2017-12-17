@@ -1,6 +1,6 @@
 /** BienManager.java
  * 
- * Handles every operation regarding Bien objects
+ * Handles every operation (creation, stockage..) regarding Bien objects
  * 
  * Notes: Agence is a Singleton I.e. always one single instance max
  * 
@@ -21,7 +21,7 @@ public class BienManager {
 	private static BienManager INSTANCE;
 
 	private BienManager() {
-
+		biens = new ArrayList<>();
 	}
 
 	public static BienManager getInstance() {
@@ -34,20 +34,22 @@ public class BienManager {
 	/** Attributes **/
 
 	private ArrayList<Bien> biens;
-	static int idBienIncrement = 1;
+	static int idBienIncrement = 1;//Bien id with autoincrement
 
 	/** Methods **/
 
-	public void createBien(int idBien, String adresse, String orientation) {
-		BienFactory.createBien(idBien, adresse, orientation);
-	}
-
-	public void addBien(Bien b) {
-		this.biens.add(b);
+	
+	/**Save a Bien to BienManager's collection and increase the autoincrement. Called by BienFactory.
+	 * 
+	 * @param a
+	 */
+	public void addBien(Bien a) {
+		this.biens.add(a);
+		this.idBienIncrement++;//add
 	}
 
 	public ArrayList<Bien> getBiens() {
-		return biens;
+		return this.biens;
 	}
 
 	public Bien getBienById(int idBien) {
@@ -59,4 +61,36 @@ public class BienManager {
 		return null;
 	}
 
+	public ArrayList<Appartement> getAppartements() {
+		ArrayList<Appartement> result = new ArrayList<>();
+		for (Bien b : biens) {
+			if (b.getBienType() == BienType.APPARTEMENT) {
+				result.add((Appartement) b);
+			}
+		}
+		return result;
+
+	}
+
+	public ArrayList<Maison> getMaisons() {
+		ArrayList<Maison> result = new ArrayList<>();
+		for (Bien b : biens) {
+			if (b.getBienType() == BienType.MAISON) {
+				result.add((Maison) b);
+			}
+		}
+		return result;
+
+	}
+
+	public ArrayList<Terrain> getTerrain() {
+		ArrayList<Terrain> result = new ArrayList<>();
+		for (Bien b : biens) {
+			if (b.getBienType() == BienType.TERRAIN) {
+				result.add((Terrain) b);
+			}
+		}
+		return result;
+
+	}
 }

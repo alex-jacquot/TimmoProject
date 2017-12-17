@@ -13,8 +13,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 import biens.Bien;
+import biens.BienFactory;
 import biens.BienManager;
+import biens.Chauffage;
+import biens.Maison;
+import biens.Orientation;
 import clients.Client;
+import clients.ClientManager;
 
 public class Agence {
 
@@ -22,9 +27,16 @@ public class Agence {
 
 	private static Agence INSTANCE;
 
+	private Set<Mandat> mandats;
+	private Set<Voeu> voeux;
+	private ClientManager cm;
+	private BienManager bm;
+
 	private Agence() {
 		mandats = new HashSet<>();
 		voeux = new HashSet<>();
+		cm = ClientManager.getInstance();
+		bm = BienManager.getInstance();
 	}
 
 	public static Agence getInstance() {
@@ -38,11 +50,6 @@ public class Agence {
 
 	private static String NAME = "TIMMO-BILIER";// why not
 
-	private Set<Mandat> mandats;
-	private Set<Voeu> voeux;
-
-	
-
 	public void addMandat(Mandat m) {
 		this.mandats.add(m);
 	}
@@ -50,11 +57,18 @@ public class Agence {
 	public void addVoeu(Voeu v) {
 		this.voeux.add(v);
 	}
-	
+
 	public static void main(String[] args) {
 
 		Agence timmo = Agence.getInstance();
-		Mandat m1 = new Mandat(0, 0, 0, null);
+		Maison m = BienFactory.createMaison("10 allées Antonio Machado", Orientation.OUEST, 300, 6, 
+				1, Chauffage.GAZ);
+		System.out.println(m);
+		Maison m2 = BienFactory.createMaison("Résidence Constantinople apt 6", Orientation.EST, 50, 2, 
+				1, Chauffage.ELECTRICITE);
+		System.out.println(m2);
+		System.out.println(BienManager.getInstance().getBiens());
+		System.out.println(BienManager.getInstance().getMaisons());
 	}
 
 }

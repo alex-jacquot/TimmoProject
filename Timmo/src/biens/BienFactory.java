@@ -1,27 +1,35 @@
 package biens;
 
-import agence.Agence;
-import agence.Mandat;
-import clients.ClientManager;
-import exceptions.BienMissingException;
-import exceptions.ClientMissingException;
-
 public class BienFactory {
 
-	public static Bien createBien(int idBien, String adresse, String orientation) {
+	public static Maison createMaison(String adresse, Orientation orientation, int surfaceHabitable, int nombrePieces,
+			int nombreEtages, Chauffage moyenChauffage) {
 
-		// TODO Exceptions
+		Maison m = new Maison(BienManager.idBienIncrement, adresse, orientation, surfaceHabitable, nombrePieces,
+				nombreEtages, moyenChauffage);
 
-		// TODO test non duplicates
+		BienManager.getInstance().addBien(m);
 
-		Bien b = new Bien(idBien, adresse, orientation);
-
-		BienManager.getInstance().addBien(b);// add mandat to agence list
-
-		BienManager.idBienIncrement++;
-
-		return b;
-
+		return m;
 	}
 
+	public static Appartement createAppartement(String adresse, Orientation orientation, int etage, int nombreDePieces,
+			int chargesMensuelles) {
+
+		Appartement a = new Appartement(BienManager.idBienIncrement, adresse, orientation, etage, nombreDePieces,
+				chargesMensuelles);
+
+		BienManager.getInstance().addBien(a);
+
+		return a;
+	}
+
+	public static Terrain createTerrain(String adresse, Orientation orientation, int surfaceSol, int longueurFacade) {
+
+		Terrain t = new Terrain(BienManager.idBienIncrement, adresse, orientation, surfaceSol, longueurFacade);
+
+		BienManager.getInstance().addBien(t);
+
+		return t;
+	}
 }

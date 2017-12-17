@@ -25,4 +25,20 @@ public class Mandat {
 		this.prix = prix;
 		this.dateLimite = dateLimite;
 	}
+
+	public int getIdClient() {
+		return idClient;
+	}
+
+	public int getIdBien() {
+		return idBien;
+	}
+
+	public int getPrix() {
+		return prix;
+	}
+
+	public Date getDateLimite() {
+		return dateLimite;
+	}
 }
