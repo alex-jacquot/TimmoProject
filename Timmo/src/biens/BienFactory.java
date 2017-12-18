@@ -1,7 +1,26 @@
+/** BienFactory.java
+* This class is a Factory designed to create new Bien.
+ * 
+ * @see Bien
+ * 
+ * @author Alex Jacquot
+ * @author Guillaume Ducoeur
+ */
+
 package biens;
 
 public class BienFactory {
 
+    /**
+     * Create a Bien of Maison's type.
+     * @param adresse
+     * @param orientation
+     * @param surfaceHabitable
+     * @param nombrePieces
+     * @param nombreEtages
+     * @param moyenChauffage
+     * @return An instance of Maison.
+     */
 	public static Maison createMaison(String adresse, Orientation orientation, int surfaceHabitable, int nombrePieces,
 			int nombreEtages, Chauffage moyenChauffage) {
 
@@ -12,7 +31,16 @@ public class BienFactory {
 
 		return m;
 	}
-
+	
+    /**
+	 * Create a Bien of Appartement's type.
+	 * @param adresse
+	 * @param orientation
+	 * @param etage
+	 * @param nombreDePieces
+	 * @param chargesMensuelles
+	 * @return An instance of Appartement.
+	 */
 	public static Appartement createAppartement(String adresse, Orientation orientation, int etage, int nombreDePieces,
 			int chargesMensuelles) {
 
@@ -23,7 +51,15 @@ public class BienFactory {
 
 		return a;
 	}
-
+	
+    /**
+	 * Create a Bien of Terrain's type.
+	 * @param adresse
+	 * @param orientation
+	 * @param surfaceSol
+	 * @param longueurFacade
+	 * @return An instance of Terrain.
+	 */
 	public static Terrain createTerrain(String adresse, Orientation orientation, int surfaceSol, int longueurFacade) {
 
 		Terrain t = new Terrain(BienManager.idBienIncrement, adresse, orientation, surfaceSol, longueurFacade);

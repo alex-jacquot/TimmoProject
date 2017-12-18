@@ -9,7 +9,7 @@ public class Client {
 	String nom;
 	String prenom;
 
-	public Client(String nom, String prenom) {
+	public Client(String prenom, String nom) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;

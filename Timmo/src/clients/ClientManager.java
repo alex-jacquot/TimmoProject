@@ -22,7 +22,7 @@ public class ClientManager {
 	static int idClientIncrement = 1;
 
 	private ClientManager() {
-
+	    clients = new ArrayList<>();
 	}
 
 	public static ClientManager getInstance() {

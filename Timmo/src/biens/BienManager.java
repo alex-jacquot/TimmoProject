@@ -2,9 +2,10 @@
  * 
  * Handles every operation (creation, stockage..) regarding Bien objects
  * 
- * Notes: Agence is a Singleton I.e. always one single instance max
+ * Notes: Agence is a Singleton i.e. always one single instance max
  * 
  * @author Alex Jacquot
+ * @author Guillaume Ducoeur
  * */
 
 package biens;
