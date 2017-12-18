@@ -9,6 +9,8 @@
 
 package biens;
 
+import clients.Client;
+
 public class BienFactory {
 
     /**

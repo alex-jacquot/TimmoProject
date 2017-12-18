@@ -32,18 +32,7 @@ public abstract class Bien {
 	public Bien() {
 
 	}
-
-	/**
-	 * Return a BienType.
-	 * 
-	 * @see BienType
-	 * 
-	 * @return The type of Bien
-	 */
-	public BienType getBienType() {
-		return bienType;
-	}
-
+	
 	/**
 	 * Bien Constructor.
 	 * @param idBien
@@ -57,6 +46,19 @@ public abstract class Bien {
 		this.orientation = orientation;
 		this.bienType = bienType;
 	}
+
+	/**
+	 * Return a BienType.
+	 * 
+	 * @see BienType
+	 * 
+	 * @return The type of Bien
+	 */
+	public BienType getBienType() {
+		return bienType;
+	}
+
+	
 
 	/**
 	 * Return the Bien's id.

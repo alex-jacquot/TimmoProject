@@ -1,5 +1,11 @@
 package clients;
 
+import java.util.ArrayList;
+
+import agence.Agence;
+import agence.Mandat;
+import biens.Bien;
+
 public class Client {
 
 	// int idClient;//Pour ne pas réinscrire les clients déjà isncrits (alt.
@@ -33,6 +39,19 @@ public class Client {
 
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
+	}
+
+	@Override
+	public String toString() {
+		return "Client id n° " + idClient + ": " + prenom + " " + nom.toUpperCase();
+	}
+
+	public ArrayList<Bien> getBiens() {
+		ArrayList<Bien> result = new ArrayList<>();
+		ArrayList<Mandat> mandats = Agence.getInstance().getMandats();
+		
+		
+		return result;
 	}
 
 	public static void main(String[] args) {

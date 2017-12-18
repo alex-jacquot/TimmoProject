@@ -11,15 +11,16 @@ package agence;
 
 import java.util.Date;
 
+import biens.Bien;
 import clients.Client;
 
 public class Mandat {
 
-    /**
-     * Attributs
-     */
-	int idClient;
-	int idBien;
+	/**
+	 * Attributs
+	 */
+	Client client;
+	Bien bien;
 	int prix;
 	Date dateLimite;
 
@@ -27,39 +28,42 @@ public class Mandat {
 	 * Mandat Constructor
 	 * 
 	 * @param idClient
-	 *             Unique id of a Client.
+	 *            Unique id of a Client.
 	 * @param idBien
-	 *             Unique id of a Bien.
+	 *            Unique id of a Bien.
 	 * @param prix
-	 *             Price of a Bien.
+	 *            Price of a Bien.
 	 * @param dateLimite
-	 *             The time's limit of the offer.
+	 *            The time's limit of the offer.
 	 */
-	public Mandat(int idClient, int idBien, int prix, Date dateLimite) {
-		this.idClient = idClient;
-		this.idBien = idBien;
+	public Mandat(Client client, Bien bien, int prix, Date dateLimite) {
+		this.client = client;
+		this.bien = bien;
 		this.prix = prix;
 		this.dateLimite = dateLimite;
 	}
 
 	/**
 	 * Return the id of a Client.
-	 * @return A Client's identification 
+	 * 
+	 * @return A Client's identification
 	 */
-	public int getIdClient() {
-		return idClient;
+	public Client getClient() {
+		return client;
 	}
 
 	/**
 	 * Retourn the id of a Bien.
+	 * 
 	 * @return A Bien's identification
 	 */
-	public int getIdBien() {
-		return idBien;
+	public Bien getBien() {
+		return bien;
 	}
-	
+
 	/**
 	 * Return the price of a bien.
+	 * 
 	 * @return A Bien's price.
 	 */
 	public int getPrix() {
@@ -67,7 +71,8 @@ public class Mandat {
 	}
 
 	/**
-	 * Return the time's limit whereas the Bien is not available  anymore.
+	 * Return the time's limit whereas the Bien is not available anymore.
+	 * 
 	 * @return A Date instance
 	 */
 	public Date getDateLimite() {

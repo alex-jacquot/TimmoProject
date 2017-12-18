@@ -14,9 +14,11 @@
 
 package agence;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
+import biens.Appartement;
 import biens.Bien;
 import biens.BienFactory;
 import biens.BienManager;
@@ -26,24 +28,23 @@ import biens.Orientation;
 import clients.Client;
 import clients.ClientManager;
 
-
 public class Agence {
 
-    /** Constructor Singleton pattern */
+	/** Constructor Singleton pattern */
 	private static Agence INSTANCE;
 
-	private Set<Mandat> mandats;
-	private Set<Voeu> voeux;
+	private ArrayList<Mandat> mandats;
+	private ArrayList<Voeu> voeux;
 	private ClientManager cm;
 	private BienManager bm;
 
 	private Agence() {
-		mandats = new HashSet<>();
-		voeux = new HashSet<>();
+		mandats = new ArrayList();
+		voeux = new ArrayList();
 		cm = ClientManager.getInstance();
 		bm = BienManager.getInstance();
 	}
-	
+
 	public static Agence getInstance() {
 		if (INSTANCE == null) {
 			INSTANCE = new Agence();
@@ -54,12 +55,12 @@ public class Agence {
 	/** Attributes */
 
 	private static String NAME = "TIMMO-BILIER";// why not
-	
+
 	/**
 	 * Add a mandat to the mandats's collection
 	 * 
 	 * @param m
-	 *         A mandat.
+	 *            A mandat.
 	 */
 	public void addMandat(Mandat m) {
 		this.mandats.add(m);
@@ -69,7 +70,7 @@ public class Agence {
 	 * Ajouter un voeu à la collection de voeux
 	 * 
 	 * @param v
-	 *         A voeu
+	 *            A voeu
 	 */
 	public void addVoeu(Voeu v) {
 		this.voeux.add(v);
@@ -78,14 +79,17 @@ public class Agence {
 	public static void main(String[] args) {
 
 		Agence timmo = Agence.getInstance();
-		Maison m = BienFactory.createMaison("10 allées Antonio Machado", Orientation.OUEST, 300, 6, 
-				1, Chauffage.GAZ);
+		Maison m = BienFactory.createMaison("10 allées Antonio Machado", Orientation.OUEST, 300, 6, 1, Chauffage.GAZ);
 		System.out.println(m);
-		Maison m2 = BienFactory.createMaison("Résidence Constantinople apt 6", Orientation.EST, 50, 2, 
-				1, Chauffage.ELECTRICITE);
-		System.out.println(m2);
+		Appartement a = BienFactory.createAppartement("9 allées Antonio Machado", Orientation.EST, 5, 8, 322);
+		System.out.println(a);
+		Maison m2 = BienFactory.createMaison("Résidence Constantinople apt 6", Orientation.EST, 50, 2, 1,
+				Chauffage.ELECTRICITE);
 		System.out.println(BienManager.getInstance().getBiens());
-		System.out.println(BienManager.getInstance().getMaisons());
+	}
+
+	public ArrayList<Mandat> getMandats() {
+		return this.mandats;
 	}
 
 }

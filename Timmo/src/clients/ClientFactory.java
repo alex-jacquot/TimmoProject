@@ -11,8 +11,6 @@ public class ClientFactory {
 
 		ClientManager.getInstance().addClient(c);// add mandat to agence list
 
-		ClientManager.idClientIncrement++;
-
 		return c;
 	}
 

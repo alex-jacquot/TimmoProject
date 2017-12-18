@@ -53,6 +53,7 @@ public class ClientManager {
 
 	public void addClient(Client c) {
 		this.clients.add(c);
+		this.idClientIncrement++;
 	}
 
 }

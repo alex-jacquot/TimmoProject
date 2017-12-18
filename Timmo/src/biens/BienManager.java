@@ -35,18 +35,20 @@ public class BienManager {
 	/** Attributes **/
 
 	private ArrayList<Bien> biens;
-	static int idBienIncrement = 1;//Bien id with autoincrement
+	static int idBienIncrement = 1;// Bien id with autoincrement
 
 	/** Methods **/
 
-	
-	/**Save a Bien to BienManager's collection and increase the autoincrement. Called by BienFactory.
+	/**
+	 * Stocke un bien dans bienManager. Appelé par BienFactory.
 	 * 
+	 * @see BienFactory
 	 * @param a
+	 *            le Bien à ajouter
 	 */
 	public void addBien(Bien a) {
 		this.biens.add(a);
-		this.idBienIncrement++;//add
+		this.idBienIncrement++;// add
 	}
 
 	public ArrayList<Bien> getBiens() {

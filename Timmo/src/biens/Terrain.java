@@ -17,4 +17,12 @@ public class Terrain extends Bien {
 
 	}
 
+	public int getSurfaceSol() {
+		return surfaceSol;
+	}
+
+	public int getLongueurFacade() {
+		return longueurFacade;
+	}
+
 }

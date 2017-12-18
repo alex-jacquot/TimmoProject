@@ -11,13 +11,13 @@
 package biens;
 
 public class Appartement extends Bien {
-    /**
-     * Attributes 
-     */
+	/**
+	 * Attributes
+	 */
 	int etage;
 	int nombreDePieces;
 	int chargesMensuelles;
-	
+
 	/**
 	 * Appartement Constructor
 	 * 
@@ -37,4 +37,18 @@ public class Appartement extends Bien {
 		this.chargesMensuelles = chargesMensuelles;
 
 	}
+
+	public int getEtage() {
+		return etage;
+	}
+
+	public int getNombreDePieces() {
+		return nombreDePieces;
+	}
+
+	public int getChargesMensuelles() {
+		return chargesMensuelles;
+	}
+	
+	
 }
