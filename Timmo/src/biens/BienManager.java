@@ -1,10 +1,11 @@
 /** BienManager.java
  * 
- * Handles every operation regarding Bien objects
+ * Handles every operation (creation, stockage..) regarding Bien objects
  * 
- * Notes: Agence is a Singleton I.e. always one single instance max
+ * Notes: Agence is a Singleton i.e. always one single instance max
  * 
  * @author Alex Jacquot
+ * @author Guillaume Ducoeur
  * */
 
 package biens;
@@ -13,18 +14,18 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 import agence.Agence;
-import clients.Client;
 
 public class BienManager {
 
-	// Singleton pattern
+	/** Constructor (Singleton pattern) **/
+
 	private static BienManager INSTANCE;
 
 	private BienManager() {
-
+		biens = new ArrayList<>();
 	}
 
-	private static BienManager getInstance() {
+	public static BienManager getInstance() {
 		if (INSTANCE == null) {
 			INSTANCE = new BienManager();
 		}
@@ -34,14 +35,25 @@ public class BienManager {
 	/** Attributes **/
 
 	private ArrayList<Bien> biens;
+	static int idBienIncrement = 1;//Bien id with autoincrement
 
 	/** Methods **/
 
-	public ArrayList<Bien> getBiens() {
-		return biens;
+	
+	/**Save a Bien to BienManager's collection and increase the autoincrement. Called by BienFactory.
+	 * 
+	 * @param a
+	 */
+	public void addBien(Bien a) {
+		this.biens.add(a);
+		this.idBienIncrement++;//add
 	}
 
-	private Bien getBienById(int idBien) {
+	public ArrayList<Bien> getBiens() {
+		return this.biens;
+	}
+
+	public Bien getBienById(int idBien) {
 		for (Bien b : biens) {
 			if (b.getIdBien() == idBien) {
 				return b;
@@ -50,4 +62,36 @@ public class BienManager {
 		return null;
 	}
 
+	public ArrayList<Appartement> getAppartements() {
+		ArrayList<Appartement> result = new ArrayList<>();
+		for (Bien b : biens) {
+			if (b.getBienType() == BienType.APPARTEMENT) {
+				result.add((Appartement) b);
+			}
+		}
+		return result;
+
+	}
+
+	public ArrayList<Maison> getMaisons() {
+		ArrayList<Maison> result = new ArrayList<>();
+		for (Bien b : biens) {
+			if (b.getBienType() == BienType.MAISON) {
+				result.add((Maison) b);
+			}
+		}
+		return result;
+
+	}
+
+	public ArrayList<Terrain> getTerrain() {
+		ArrayList<Terrain> result = new ArrayList<>();
+		for (Bien b : biens) {
+			if (b.getBienType() == BienType.TERRAIN) {
+				result.add((Terrain) b);
+			}
+		}
+		return result;
+
+	}
 }

@@ -4,15 +4,20 @@ public class Client {
 
 	// int idClient;//Pour ne pas réinscrire les clients déjà isncrits (alt.
 	// hashCode())
-	String nom;
 
-	public Client(String nom, String prenom) {
+	int idClient;
+	String nom;
+	String prenom;
+
+	public Client(String prenom, String nom) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 	}
 
-	String prenom;
+	public int getIdClient() {
+		return idClient;
+	}
 
 	public String getNom() {
 		return nom;
