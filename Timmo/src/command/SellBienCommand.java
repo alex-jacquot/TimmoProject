@@ -16,4 +16,10 @@ public class SellBienCommand implements Command {
 
 	}
 
+	@Override
+	public void writeCommand() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

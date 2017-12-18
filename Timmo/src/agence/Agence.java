@@ -142,10 +142,10 @@ public class Agence {
 		Terrain terrain = BienFactory.createTerrain("Parc d'odyssud", Orientation.NORD, 300, 80);
 		System.out.println(terrain);
 
-		Client poor = ClientFactory.createClient("Iam", "Poor");// No biens, no voeux
+		Client poor = ClientFactory.createClient("Guy", "Poor", "toopoor@4mail.com", "N/A");// No biens, no voeux
 		System.out.println(poor);
 
-		Client entrepreneur = ClientFactory.createClient("Isell", "lottastuff");// Lot of biens to sell, no voeux
+		Client entrepreneur = ClientFactory.createClient("Isell", "lottastuff", "contactme@andbuy.com", "123464646");
 		System.out.println(entrepreneur);
 
 		Mandat m = MandatFactory.createMandat(entrepreneur, maison, 10000,

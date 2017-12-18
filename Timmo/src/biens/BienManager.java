@@ -51,19 +51,10 @@ public class BienManager {
 		this.idBienIncrement++;// add
 	}
 
-	/**
-	 * Renvoie l'id d'un Bien.
-	 * @return L'identification du Bien
-	 */
 	public ArrayList<Bien> getBiens() {
 		return this.biens;
 	}
 
-	/**
-	 * Renvoie le bien grace a l'id.
-	 * @param idBien
-	 * @return Une instance de Bien
-	 */
 	public Bien getBienById(int idBien) {
 		for (Bien b : biens) {
 			if (b.getIdBien() == idBien) {
@@ -73,10 +64,6 @@ public class BienManager {
 		return null;
 	}
 
-	/**
-	 * Retourne une liste d'appartement.
-	 * @return Une liste des Appartement contenues dans Bien
-	 */
 	public ArrayList<Appartement> getAppartements() {
 		ArrayList<Appartement> result = new ArrayList<>();
 		for (Bien b : biens) {
@@ -88,10 +75,6 @@ public class BienManager {
 
 	}
 
-	/**
-	 * Retourne une liste de Maison. 
-	 * @return Une liste des Maison contenues dans Bien
-	 */
 	public ArrayList<Maison> getMaisons() {
 		ArrayList<Maison> result = new ArrayList<>();
 		for (Bien b : biens) {
@@ -103,10 +86,6 @@ public class BienManager {
 
 	}
 
-	/**
-	 * Retourne une liste de Terrain.
-	 * @return Une liste des Terrain contenus dans Bien
-	 */
 	public ArrayList<Terrain> getTerrain() {
 		ArrayList<Terrain> result = new ArrayList<>();
 		for (Bien b : biens) {

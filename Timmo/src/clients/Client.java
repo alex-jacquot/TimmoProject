@@ -14,8 +14,10 @@ public class Client {
 	int idClient;
 	String nom;
 	String prenom;
+	String email;
+	int numTel;
 
-	public Client(String prenom, String nom) {
+	public Client(String prenom, String nom, String email, String numTel) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -43,7 +45,7 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "Client id n° " + idClient + ": " + prenom + " " + nom.toUpperCase();
+		return "Client id n° " + idClient + ": " + prenom + " " + nom.toUpperCase()+ ", " + email + ", " + numTel;
 	}
 
 	public ArrayList<Bien> getBiens() {

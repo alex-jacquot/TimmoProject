@@ -36,7 +36,7 @@ public class MandatFactory {
 	 *             If there's already a Mandat with the same id.
 	 */
 	public static Mandat createMandat(Client client, Bien bien, int prix, Date dateLimite)
-			throws ClientMissingException, BienMissingException, BienHasTwoMandatsException {
+			throws BienHasTwoMandatsException {
 
 		/*
 		 * if (ClientManager.getInstance().getClient(client) == null) { throw new
@@ -46,9 +46,10 @@ public class MandatFactory {
 		 * BienMissingException(); }
 		 */
 
-		// TODO test non duplicates
+		if (Agence.getInstance().getMandatForBien(bien) != null) {
+			throw new BienHasTwoMandatsException();
+		}
 
-		// non duplicate
 		Mandat m = new Mandat(client, bien, prix, dateLimite);
 
 		Agence.getInstance().addMandat(m);// add mandat to agence list
