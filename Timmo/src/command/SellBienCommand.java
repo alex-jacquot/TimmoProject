@@ -17,8 +17,8 @@ public class SellBienCommand implements Command {
 	}
 
 	@Override
-	public void writeCommand() {
-		// TODO Auto-generated method stub
+	public String writeCommand() {
+		return "Vendre bien";
 		
 	}
 

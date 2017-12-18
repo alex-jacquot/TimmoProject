@@ -3,6 +3,6 @@ package command;
 public interface Command {
 
 	public void executeCommand();
-	public void writeCommand();
+	public String writeCommand();
 	
 }

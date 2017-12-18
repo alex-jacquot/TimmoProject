@@ -1,6 +1,6 @@
 package command;
 
-public class CreateClientCommand implements Command {
+public class ReturnCommand implements Command {
 
 	@Override
 	public void executeCommand() {
@@ -10,7 +10,7 @@ public class CreateClientCommand implements Command {
 
 	@Override
 	public String writeCommand() {
-		return "Créer client";
+		return "Annuler";
 
 	}
 
