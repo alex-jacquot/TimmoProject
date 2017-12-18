@@ -6,10 +6,19 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import agence.*;
-import biens.*;
-import clients.*;
-import exceptions.*;
+import agence.Agence;
+import agence.Mandat;
+import agence.MandatFactory;
+import biens.BienFactory;
+import biens.BienManager;
+import biens.Orientation;
+import biens.Terrain;
+import clients.Client;
+import clients.ClientFactory;
+import clients.ClientManager;
+import exceptions.BienHasTwoMandatsException;
+import exceptions.BienMissingException;
+import exceptions.ClientMissingException;
 
 public class MandatsTest {
 
@@ -27,33 +36,6 @@ public class MandatsTest {
         Agence a = Agence.getInstance();
         Terrain t = BienFactory.createTerrain("test" , Orientation.SUD , 40 , 5);
         Client c = ClientFactory.createClient("xx", "uuu");
-    }
-    
-    @Test 
-    public void testCreerMandat() throws ClientMissingException, BienMissingException, BienHasTwoMandatsException {
-    	Agence a = Agence.getInstance();
-    	Terrain t = BienFactory.createTerrain("test" , Orientation.SUD , 40 , 5);
-        Client c = ClientFactory.createClient("xx", "uuu");
-        Date date = new Date();
-        Mandat m = MandatFactory.createMandat(t.getIdBien(), c.getIdClient(), 10, date);
-    }
-    
-    @Test (expected = BienMissingException.class)
-    public void testThrowBienException() throws ClientMissingException, BienMissingException, BienHasTwoMandatsException {
-    	Agence a = Agence.getInstance();
-    	Terrain t = BienFactory.createTerrain("test" , Orientation.SUD , 40 , 5);
-        Client c = ClientFactory.createClient("xx", "uuu");
-        Date date = new Date();
-        Mandat m = MandatFactory.createMandat(-1, c.getIdClient(), 10, date);
-    }
-    
-    @Test (expected = ClientMissingException.class)
-    public void testThrowClientException() throws ClientMissingException, BienMissingException, BienHasTwoMandatsException {
-    	Agence a = Agence.getInstance();
-    	Terrain t = BienFactory.createTerrain("test" , Orientation.SUD , 40 , 5);
-        Client c = ClientFactory.createClient("xx", "uuu");
-        Date date = new Date();
-        Mandat m = MandatFactory.createMandat(t.getIdBien(), -1, 10, date);
     }
 
 }

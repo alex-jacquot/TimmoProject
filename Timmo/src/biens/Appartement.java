@@ -49,6 +49,12 @@ public class Appartement extends Bien {
 	public int getChargesMensuelles() {
 		return chargesMensuelles;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Bien id n°" + idBien + ": Appartement situé à " + adresse + " orienté " + orientation + ", "
+				+ nombreDePieces + " pièces situé au " + etage + ((etage == 1) ? "er" : "ème") + " à "
+				+ chargesMensuelles + "€ de charges par mois";
+	}
+
 }

@@ -49,9 +49,17 @@ public class Client {
 	public ArrayList<Bien> getBiens() {
 		ArrayList<Bien> result = new ArrayList<>();
 		ArrayList<Mandat> mandats = Agence.getInstance().getMandats();
-		
-		
+
 		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Client) {
+			Client c = (Client) obj;
+			return (c.idClient == this.idClient);
+		}
+		return false;
 	}
 
 	public static void main(String[] args) {

@@ -32,9 +32,10 @@ public abstract class Bien {
 	public Bien() {
 
 	}
-	
+
 	/**
 	 * Bien Constructor.
+	 * 
 	 * @param idBien
 	 * @param adresse
 	 * @param orientation
@@ -57,8 +58,6 @@ public abstract class Bien {
 	public BienType getBienType() {
 		return bienType;
 	}
-
-	
 
 	/**
 	 * Return the Bien's id.
@@ -103,6 +102,15 @@ public abstract class Bien {
 	 */
 	public Orientation getOrientation() {
 		return orientation;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Bien) {
+			Bien c = (Bien) obj;
+			return (c.idBien == this.idBien);
+		}
+		return false;
 	}
 
 }
