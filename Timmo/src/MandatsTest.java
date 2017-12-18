@@ -36,6 +36,7 @@ public class MandatsTest {
         Agence a = Agence.getInstance();
         Terrain t = BienFactory.createTerrain("test" , Orientation.SUD , 40 , 5);
         Client c = ClientFactory.createClient("xx", "uuu");
+        //test
     }
 
 }
