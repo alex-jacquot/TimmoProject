@@ -1,11 +1,5 @@
 package clients;
 
-import java.util.ArrayList;
-
-import agence.Agence;
-import agence.Mandat;
-import biens.Bien;
-
 public class Client {
 
 	// int idClient;//Pour ne pas réinscrire les clients déjà isncrits (alt.
@@ -15,12 +9,14 @@ public class Client {
 	String nom;
 	String prenom;
 	String email;
-	int numTel;
+	String numTel;
 
 	public Client(String prenom, String nom, String email, String numTel) {
-		super();
+		this.idClient = ClientManager.idClientIncrement;
 		this.nom = nom;
 		this.prenom = prenom;
+		this.email = email;
+		this.numTel = numTel;
 	}
 
 	public int getIdClient() {
@@ -45,15 +41,15 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "Client id n° " + idClient + ": " + prenom + " " + nom.toUpperCase()+ ", " + email + ", " + numTel;
+		return "Client id n° " + idClient + ": " + prenom + " " + nom.toUpperCase() + ", " + email + ", " + numTel;
 	}
 
-	public ArrayList<Bien> getBiens() {
-		ArrayList<Bien> result = new ArrayList<>();
-		ArrayList<Mandat> mandats = Agence.getInstance().getMandats();
-
-		return result;
-	}
+	/*
+	 * public ArrayList<Bien> getBiens() { ArrayList<Bien> result = new
+	 * ArrayList<>(); ArrayList<Mandat> mandats = Agence.getInstance().getMandats();
+	 * 
+	 * return result; }
+	 */
 
 	@Override
 	public boolean equals(Object obj) {

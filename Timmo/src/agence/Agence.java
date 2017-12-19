@@ -60,7 +60,7 @@ public class Agence {
 
 	/** Attributes */
 
-	private static String NAME = "TIMMO-BILIER";// why not
+	public static String NAME = "TIMMO-BILIER";// why not
 
 	/**
 	 * Add a mandat to the mandats's collection
@@ -70,6 +70,17 @@ public class Agence {
 	 */
 	public void addMandat(Mandat m) {
 		this.mandats.add(m);
+	}
+
+	/**
+	 * Remove a mandat to the mandats's collection and destroy the references on
+	 * CLient and Bien
+	 * 
+	 * @param m
+	 *            A mandat.
+	 */
+	public void deleteMandat(Mandat m) {
+		this.mandats.remove(m);
 	}
 
 	/**
@@ -125,7 +136,5 @@ public class Agence {
 	public String toString() {
 		return "Agence " + NAME;
 	}
-
-
 
 }

@@ -27,9 +27,9 @@ public class Terrain extends Bien {
 
 	@Override
 	public String toString() {
-		return "Bien id n°" + idBien + ": Terrain situé à " + adresse + " orienté " + orientation + 
-				", "+ surfaceSol + "m² construisables avec une façade de " + longueurFacade + "m";
-				
+		return "Bien id n°" + idBien + ": Terrain situé à " + adresse + " orienté " + orientation + ", " + surfaceSol
+				+ "m² construisables avec une façade de " + longueurFacade + "m";
+
 	}
-	
+
 }

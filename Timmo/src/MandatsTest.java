@@ -1,3 +1,4 @@
+
 import static org.junit.Assert.*;
 
 import java.util.Date;
@@ -7,8 +8,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import agence.Agence;
-import agence.Mandat;
-import agence.MandatFactory;
 import biens.BienFactory;
 import biens.BienManager;
 import biens.Orientation;
@@ -35,7 +34,7 @@ public class MandatsTest {
     public void testCreerClient() {
         Agence a = Agence.getInstance();
         Terrain t = BienFactory.createTerrain("test" , Orientation.SUD , 40 , 5);
-        Client c = ClientFactory.createClient("xx", "uuu");
+       // Client c = ClientFactory.createClient("xx", "uuu");
     }
 
 }

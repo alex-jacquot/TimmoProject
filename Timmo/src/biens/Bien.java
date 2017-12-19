@@ -112,5 +112,4 @@ public abstract class Bien {
 		}
 		return false;
 	}
-
 }
