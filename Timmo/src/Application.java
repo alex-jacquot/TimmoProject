@@ -74,7 +74,7 @@ public class Application {
 		Scanner sc = new Scanner(System.in);
 		String cmd;
 		while (true) {
-			System.out.println("\nEntrez une commande: tapez 'help' pour la liste des commandes");
+			System.out.println("Entrez une commande: tapez 'help' pour la liste des commandes");
 			cmd = sc.nextLine();
 
 			switch (cmd) {
