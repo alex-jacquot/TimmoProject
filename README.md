@@ -6,3 +6,10 @@ The project is focused on quality of Conception and Modeling, usage of Object-Or
 of the code.
 
 
+How to use the application:
+
+Import the "Timmo" directory as an existing project in your Eclipse workspace.
+Select "Export..>Runnable JAR"
+Launch the jar using "java -jar timmo.jar"
+
+If you launched the app correctly, the program will ask for commands. Type "help" if you need to see all the existing commands to play around.
