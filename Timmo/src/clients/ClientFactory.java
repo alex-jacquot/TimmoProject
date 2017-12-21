@@ -1,7 +1,15 @@
-package clients;
+/** Client Factory.java
+ * Factory class designed to create a new Client
+ * 
+ * @see Client
+ * @see Agence
+ * 
+ * @author Alex Jacquot
+ * @author Guillaume Ducoeur
+ */
 
-import biens.Bien;
-import biens.BienManager;
+
+package clients;
 
 public class ClientFactory {
 

@@ -1,5 +1,10 @@
 package clients;
 
+import java.util.ArrayList;
+
+import agence.Agence;
+import agence.Mandat;
+
 public class Client {
 
 	// int idClient;//Pour ne pas réinscrire les clients déjà isncrits (alt.
@@ -58,6 +63,10 @@ public class Client {
 			return (c.idClient == this.idClient);
 		}
 		return false;
+	}
+	
+	public ArrayList<Mandat> getMandats(){
+		return Agence.getInstance().getMandatsForClient(this);
 	}
 
 	public static void main(String[] args) {

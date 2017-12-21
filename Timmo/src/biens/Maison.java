@@ -1,3 +1,11 @@
+/**
+ * Specific subtype of a Bien with an inhabitable surface, a rooms and floors count, and a Chauffage value
+ * 
+ * @see Bien
+ * @see BienFactory
+ * @author Alex Jacquot
+ */
+
 package biens;
 
 public class Maison extends Bien {
@@ -39,9 +47,9 @@ public class Maison extends Bien {
 
 	@Override
 	public String toString() {
-		return "Bien id n°" + idBien + ": Maison située à " + adresse + " orienté " + orientation + 
-				", "+ surfaceHabitable + "m² habitables avec " + nombrePieces + " pièces sur "
-				+ nombreEtages + " étage" +(nombreEtages>1?"s":"")+", chauffé avec " + moyenChauffage;
+		return "Bien id n°" + idBien + ": Maison située à " + adresse + " orienté " + orientation + ", "
+				+ surfaceHabitable + "m² habitables avec " + nombrePieces + " pièces sur " + nombreEtages + " étage"
+				+ (nombreEtages > 1 ? "s" : "") + ", chauffé avec " + moyenChauffage;
 	}
 
 }

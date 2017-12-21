@@ -16,10 +16,8 @@
 
 package biens;
 
-import java.util.Optional;
-
+import agence.Agence;
 import agence.Mandat;
-import clients.Client;
 
 public abstract class Bien {
 
@@ -111,5 +109,13 @@ public abstract class Bien {
 			return (c.idBien == this.idBien);
 		}
 		return false;
+	}
+
+	public boolean hasMandat() {
+		return Agence.getInstance().getMandatForBien(this) != null;
+	}
+
+	public Mandat getMandat() {
+		return Agence.getInstance().getMandatForBien(this);
 	}
 }

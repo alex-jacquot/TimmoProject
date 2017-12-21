@@ -12,6 +12,7 @@ package agence;
 import java.util.Date;
 
 import biens.Bien;
+import biens.BienType;
 import clients.Client;
 
 public class Mandat {
@@ -81,8 +82,8 @@ public class Mandat {
 
 	@Override
 	public String toString() {
-		return "Mandat donnant droit à M. " + client.getPrenom() + " " + client.getNom() + "de vendre son "
-				+ bien.getBienType() + "(id n°" + bien.getIdBien() + " pour la somme de " + prix + " euros (expire le "
+		return "Mandat donnant droit à M. " + client.getPrenom() + " " + client.getNom() + " de vendre s"+ (bien.getBienType()==BienType.MAISON?"a ":"on ")
+				+ bien.getBienType() + " (id n°" + bien.getIdBien() + ") pour la somme de " + prix + " euros (expire le "
 				+ dateLimite + ")";
 	}
 

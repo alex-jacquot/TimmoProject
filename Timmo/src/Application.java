@@ -1,3 +1,9 @@
+
+/**
+ * Class containing the main method to be executed first. 
+ * Also contains a few testobjects and a prompt for the user to type commands from the comman package
+ */
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
@@ -21,6 +27,7 @@ import command.ExitCommand;
 import command.HelpCommand;
 import command.ListBiensCommand;
 import command.ListClientsCommand;
+import command.ListMandatsCommand;
 import exceptions.BienHasTwoMandatsException;
 import exceptions.BienMissingException;
 import exceptions.ClientMissingException;
@@ -35,8 +42,8 @@ public class Application {
 	 */
 
 	/**
-	 * Crée des données de test
-	 * 
+	 * Create test data
+	 * @author Alex Jacquot
 	 * @throws BienHasTwoMandatsException
 	 */
 	@SuppressWarnings("unused")
@@ -54,18 +61,20 @@ public class Application {
 		Terrain terrain = BienFactory.createTerrain("Parc d'odyssud", Orientation.NORD, 300, 80);
 		// System.out.println(terrain);
 
-		Client poor = ClientFactory.createClient("Alex", "JACQUOT", "alex.jacquot.dev@gmail.com", "060417****");
+		Client entrepreneur = ClientFactory.createClient("Alex", "JACQUOT", "alex.jacquot.dev@gmail.com", "060417****");
 		// System.out.println(poor);
 
-		Client entrepreneur = ClientFactory.createClient("Guillaume", "DUCOEUR", "pickup@artist.com", "06*******");
+		Client poorguy = ClientFactory.createClient("Guillaume", "DUCOEUR", "pickup@artist.com", "06*******");
 		// System.out.println(entrepreneur);
 
+		@SuppressWarnings("deprecation")
 		Mandat m = MandatFactory.createMandat(entrepreneur, maison, 10000,
 				new Date(Date.UTC(2018, 12, 10, 00, 00, 00)));
 
 		// System.out.println(BienManager.getInstance().getBiens());
 	}
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args)
 			throws ClientMissingException, BienMissingException, BienHasTwoMandatsException {
 
@@ -96,6 +105,9 @@ public class Application {
 			case "list biens":
 				new ListBiensCommand().executeCommand();
 				break;
+			case "list mandats":
+				new ListMandatsCommand().executeCommand();
+				break;
 			case "exit":
 				new ExitCommand().executeCommand();
 				break;
@@ -104,6 +116,7 @@ public class Application {
 				break;
 			}
 		}
+
 	}
 
 }

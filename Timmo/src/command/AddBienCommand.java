@@ -1,13 +1,23 @@
+/** AddBienCommand.java
+ * 
+ * Command calling the call of the form for the creation of a Bien
+ * 
+ * Notes: AddBienCommand is a Concrete Command from the Command design pattern
+ * 
+ * @see Command
+ * @author Alex Jacquot
+ * */
+
 package command;
 
-import biens.BienManager;
+import agence.Forms;
 
 public class AddBienCommand implements Command {
 
 	@Override
 	public void executeCommand() {
-		BienManager.getInstance().formBien();
-		//System.out.println("Bien crée");
+		Forms.formBien();
+		// System.out.println("Bien crée");
 	}
 
 	@Override

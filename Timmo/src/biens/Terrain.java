@@ -1,3 +1,10 @@
+/**
+ * Specific subtype of a Bien with a surfaceSize and a facade
+ * @see Bien
+ * @see BienFactory
+ * @author Alex Jacquot
+ */
+
 package biens;
 
 public class Terrain extends Bien {

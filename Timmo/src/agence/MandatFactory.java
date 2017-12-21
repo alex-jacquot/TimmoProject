@@ -13,9 +13,7 @@ package agence;
 import java.util.Date;
 
 import biens.Bien;
-import biens.BienManager;
 import clients.Client;
-import clients.ClientManager;
 import exceptions.*;
 
 public class MandatFactory {
@@ -24,9 +22,13 @@ public class MandatFactory {
 	 * Create a Mandat.
 	 * 
 	 * @param idBien
+	 *            The id of the Bien object
 	 * @param idClient
+	 *            The id of the Client object
 	 * @param prix
+	 *            The price
 	 * @param dateLimite
+	 *            Date of expiration
 	 * @return A Mandat instance.
 	 * @throws ClientMissingException
 	 *             If the Client doesn't exist.

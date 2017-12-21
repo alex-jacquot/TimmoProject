@@ -10,9 +10,6 @@
 package clients;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Scanner;
-
 import agence.Agence;
 
 public class ClientManager {
@@ -33,34 +30,9 @@ public class ClientManager {
 		return INSTANCE;
 	}
 
-	public void formClient() {
-		Scanner scan = new Scanner(System.in);
-		String nomClient, prenomClient, email, numTel;
-		do {
-			System.out.println("Entrez le prenom du client:"); // Asks question
-			prenomClient = scan.nextLine();
-		} while (prenomClient.isEmpty());
-
-		do {
-			System.out.println("Entrez le nom du client:");
-			nomClient = scan.nextLine();
-		} while (nomClient.isEmpty());
-
-		do {
-			System.out.println("Entrez l'email du client:");
-			email = scan.nextLine();
-		} while (email.isEmpty());
-
-		do {
-			System.out.println("Entrez le téléphone du client:");
-			numTel = scan.nextLine();
-		} while (numTel.isEmpty());
-		ClientFactory.createClient(nomClient, prenomClient, email, numTel);
-	}
-
 	public String listClients() {
 		// strigbuilder?
-		String s = "Clients de l'agence " + Agence.getInstance().NAME + " :\n";
+		String s = "Clients de l'agence " + Agence.NAME + " :\n";
 		for (Client b : this.getClients()) {
 			s += b + " \n";
 		}
@@ -88,7 +60,7 @@ public class ClientManager {
 
 	public void addClient(Client c) {
 		this.clients.add(c);
-		this.idClientIncrement++;
+		ClientManager.idClientIncrement++;
 	}
 
 }

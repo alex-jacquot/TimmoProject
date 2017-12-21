@@ -1,10 +1,20 @@
+/** Command calling the call of the form for the creation of a Mandat
+ * 
+ * Notes: AddMandatCommand is a Concrete Command from the Command design pattern
+ * 
+ * @see Command
+ * @author Alex Jacquot
+ * */
+
 package command;
+
+import agence.Forms;
 
 public class AddMandatCommand implements Command {
 
 	@Override
 	public void executeCommand() {
-		// TODO Auto-generated method stub
+		Forms.formMandat();
 
 	}
 

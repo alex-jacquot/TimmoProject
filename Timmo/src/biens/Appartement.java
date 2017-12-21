@@ -1,11 +1,8 @@
-/** Appartement.java
- * Appartement is a type of Bien.
- * It has a floor, a number of rooms and a mensual cost.
- * 
+/**
+ * Specific subtype of a Bien with a floor number, a rooms count, and additionnal mensual charges
  * @see Bien
- * 
+ * @see BienFactory
  * @author Alex Jacquot
- * @author Guillaume Ducoeur
  */
 
 package biens;

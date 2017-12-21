@@ -1,5 +1,5 @@
 /** BienFactory.java
-* This class is a Factory designed to create new Bien.
+ * Factory class designed to create a new Bien by calling the correct subtype constructor an registering the object in BienManager
  * 
  * @see Bien
  * 
@@ -9,20 +9,19 @@
 
 package biens;
 
-import clients.Client;
-
 public class BienFactory {
 
-    /**
-     * Create a Bien of Maison's type.
-     * @param adresse
-     * @param orientation
-     * @param surfaceHabitable
-     * @param nombrePieces
-     * @param nombreEtages
-     * @param moyenChauffage
-     * @return An instance of Maison.
-     */
+	/**
+	 * Create a Bien of Maison's type.
+	 * 
+	 * @param adresse
+	 * @param orientation
+	 * @param surfaceHabitable
+	 * @param nombrePieces
+	 * @param nombreEtages
+	 * @param moyenChauffage
+	 * @return An instance of Maison.
+	 */
 	public static Maison createMaison(String adresse, Orientation orientation, int surfaceHabitable, int nombrePieces,
 			int nombreEtages, Chauffage moyenChauffage) {
 
@@ -33,9 +32,10 @@ public class BienFactory {
 
 		return m;
 	}
-	
-    /**
+
+	/**
 	 * Create a Bien of Appartement's type.
+	 * 
 	 * @param adresse
 	 * @param orientation
 	 * @param etage
@@ -53,9 +53,10 @@ public class BienFactory {
 
 		return a;
 	}
-	
-    /**
+
+	/**
 	 * Create a Bien of Terrain's type.
+	 * 
 	 * @param adresse
 	 * @param orientation
 	 * @param surfaceSol

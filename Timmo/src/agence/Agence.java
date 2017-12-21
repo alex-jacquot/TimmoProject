@@ -1,7 +1,9 @@
 /** Agence.java
+
  * Handles a full, single Agence Information System for every action an Agence should do.
+ * It also handles Mandat and Voeu storing and linking.
  * 
- * Notes: Agence is a Singleton i.e. always one single instance max
+ * Notes: Agence is a Singleton
  * 
  * @see BienManager
  * @see ClientManager
@@ -15,25 +17,12 @@
 package agence;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
-
-import biens.Appartement;
 import biens.Bien;
-import biens.BienFactory;
 import biens.BienManager;
-import biens.Chauffage;
-import biens.Maison;
-import biens.Orientation;
-import biens.Terrain;
 import clients.Client;
-import clients.ClientFactory;
 import clients.ClientManager;
-import exceptions.BienHasTwoMandatsException;
-import exceptions.BienMissingException;
-import exceptions.ClientMissingException;
 
+@SuppressWarnings("unused")
 public class Agence {
 
 	/** Constructor Singleton pattern */
@@ -41,12 +30,13 @@ public class Agence {
 
 	private ArrayList<Mandat> mandats;
 	private ArrayList<Voeu> voeux;
+	
 	private ClientManager cm;
 	private BienManager bm;
 
 	private Agence() {
-		mandats = new ArrayList();
-		voeux = new ArrayList();
+		mandats = new ArrayList<Mandat>();
+		voeux = new ArrayList<Voeu>();
 		cm = ClientManager.getInstance();
 		bm = BienManager.getInstance();
 	}
@@ -135,6 +125,12 @@ public class Agence {
 	@Override
 	public String toString() {
 		return "Agence " + NAME;
+	}
+
+	public void getAvailableBiens() {
+		for (Mandat m : this.mandats) {
+			System.out.println(m);
+		}
 	}
 
 }
